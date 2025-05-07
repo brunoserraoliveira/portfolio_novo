@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Analista Cloud AWS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 100%);
+        }
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+        .tech-icon:hover {
+            transform: translateY(-5px);
+        }
+        .project-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 24px;
+            top: 32px;
+            height: calc(100% - 32px);
+            width: 2px;
+            background: #e5e7eb;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="gradient-bg text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold">
+                    <span class="text-blue-300"></span>Portfolio
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-200 transition">Início</a>
+                    <a href="#about" class="hover:text-blue-200 transition">Sobre</a>
+                    <a href="#skills" class="hover:text-blue-200 transition">Habilidades</a>
+                    <a href="#projects" class="hover:text-blue-200 transition">Projetos</a>
+                    <a href="#experience" class="hover:text-blue-200 transition">Experiência</a>
+                    <a href="#contact" class="hover:text-blue-200 transition">Contato</a>
+                </nav>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-blue-900 w-full py-2 px-6" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="hover:text-blue-200 transition">Início</a>
+                <a href="#about" class="hover:text-blue-200 transition">Sobre</a>
+                <a href="#skills" class="hover:text-blue-200 transition">Habilidades</a>
+                <a href="#projects" class="hover:text-blue-200 transition">Projetos</a>
+                <a href="#experience" class="hover:text-blue-200 transition">Experiência</a>
+                <a href="#contact" class="hover:text-blue-200 transition">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Olá, eu sou <span class="text-blue-200">Bruno Oliveira</span></h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6">Analista Cloud AWS</h2>
+                <p class="text-lg mb-8 text-blue-100">
+                    Especialista em arquiteturas escaláveis, automação de infraestrutura AWS.
+                    Transformando ideias em soluções na nuvem com eficiência e segurança.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-white text-blue-800 px-6 py-3 rounded-lg font-semibold hover:bg-blue-100 transition">
+                        Contate-me
+                    </a>
+                    <a href="#projects" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                        Ver Projetos
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <div class="w-64 h-64 md:w-80 md:h-80 bg-blue-400 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                        <img src="src/bruno.jpeg" 
+                             alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-5 -right-5 bg-blue-800 p-4 rounded-lg shadow-lg">
+                        <p class="font-bold">2+ Anos</p>
+                        <p class="text-sm">Experiência</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Sobre Mim</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0 flex justify-center">
+                    <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg">
+                        <img src="src/bruno.jpeg" 
+                             alt="About Me" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Analista Cloud DevOps Profissional</h3>
+                    <p class="text-gray-600 mb-6">
+                        Atualmente, estou focado no estudo de arquitetura em nuvem e na plataforma AWS (Amazon Web Services) para aprimorar minhas habilidades como Analista Cloud. Meu aprendizado inclui o desenvolvimento e a gestão de servidores Linux (EC2) na nuvem, com ênfase em bancos de dados. Participo de laboratórios práticos para dominar tecnologias essenciais como Linux, Docker, Kubernetes, além de bancos de dados relacionais e não relacionais. Estou comprometido em me manter atualizado e em constante aprendizado, acompanhando as demandas do setor de Cloud Computing em constante evolução.
+                    </p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span class="text-gray-700">Nome: Bruno Oliveira</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span class="text-gray-700">Experiência: 2+ Anos</span>
+                        </div>
+                        <div class="flex flex-col sm:flex-row items-start sm:items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span class="text-gray-700 break-words">Email: brunooliverdevops@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span class="text-gray-700">Telefone: +55 (87) 99667-8383</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span class="text-gray-700">Freelance: Disponível</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+                            <span class="text-gray-700">Localização: Serra Talhada PE , BR</span>
+                        </div>
+                    </div>
+                    <a href="src/Curriculo.pdf" download class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-100">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Minhas Habilidades</h2>
+        
+        <div class="mb-16">
+            <h3 class="text-xl font-semibold mb-6 text-center text-gray-700">Cloud & DevOps</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <a href="https://www.linkedin.com/in/bruno-luiz-oliveira-aws-laboratorio" target="_blank" class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center hover:shadow-lg transition">
+                    <i class="fab fa-aws text-4xl text-orange-500 mb-3"></i>
+                    <span class="font-medium">AWS</span>
+                </a>
+                <a href="https://www.linkedin.com/in/bruno-luiz-oliveira-docker-laboratorio" target="_blank" class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center hover:shadow-lg transition">
+                    <i class="fab fa-docker text-4xl text-blue-400 mb-3"></i>
+                    <span class="font-medium">Docker</span>
+                </a>
+                <a href="https://www.linkedin.com/in/bruno-luiz-oliveira-terraform-laboratorio" target="_blank" class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center hover:shadow-lg transition">
+                    <i class="fas fa-ship text-4xl text-blue-600 mb-3"></i>
+                    <span class="font-medium">Terraform</span>
+                </a>
+                <a href="https://www.linkedin.com/in/bruno-luiz-oliveira-linux-laboratorio" target="_blank" class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center hover:shadow-lg transition">
+                    <i class="fab fa-linux text-4xl text-black mb-3"></i>
+                    <span class="font-medium">Linux</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="mb-16">
+            <h3 class="text-xl font-semibold mb-6 text-center text-gray-700">Automação & IaC</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                    <i class="fas fa-code text-4xl text-purple-600 mb-3"></i>
+                    <span class="font-medium">Terraform</span>
+                </div>
+                <div class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                    <i class="fas fa-cogs text-4xl text-gray-600 mb-3"></i>
+                    <span class="font-medium">AWS CLI</span>
+                </div>
+                <div class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                    <i class="fas fa-cogs text-4xl text-gray-600 mb-3"></i>
+                    <span class="font-medium">Ansible</span>
+                </div>
+                <div class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                    <i class="fas fa-cogs text-4xl text-gray-600 mb-3"></i>
+                    <span class="font-medium">Shell Script</span>
+                </div>
+                <div class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                    <i class="fab fa-git-alt text-4xl text-orange-600 mb-3"></i>
+                    <span class="font-medium">Git</span>
+                </div>
+                <div class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                    <i class="fab fa-github text-4xl text-black mb-3"></i>
+                    <span class="font-medium">GitHub Actions</span>
+                </div>
+            </div>
+        </div>
+        
+        <div>
+            <h3 class="text-xl font-semibold mb-6 text-center text-gray-700">Monitoramento & Observabilidade</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                <div class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                    <i class="fas fa-chart-line text-4xl text-green-500 mb-3"></i>
+                    <span class="font-medium">Zabbix</span>
+                </div>
+                <div class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                    <i class="fas fa-chart-bar text-4xl text-orange-500 mb-3"></i>
+                    <span class="font-medium">Grafana</span>
+                </div>
+                <div class="tech-icon bg-white p-6 rounded-lg shadow-md flex flex-col items-center">
+                    <i class="fas fa-chart-bar text-4xl text-orange-500 mb-3"></i>
+                    <span class="font-medium">Cloud Watch</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Meus Laboratórios</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Laboratório 1 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fab fa-aws text-6xl text-orange-500"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">
+                            <a href="https://www.linkedin.com/feed/update/urn:li:activity:7320849983262416897/" target="_blank" class="text-blue-600 hover:text-blue-800">
+                                Laboratório AWS
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Experimentos práticos com serviços AWS, incluindo EC2, S3, Lambda e CloudFormation.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Laboratório 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fab fa-docker text-6xl text-blue-400"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">
+                            <a href="https://www.linkedin.com/posts/bruno-luiz-oliveira-docker-laboratorio" target="_blank" class="text-blue-600 hover:text-blue-800">
+                                Laboratório Docker
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Criação e gerenciamento de containers Docker para aplicações escaláveis.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Laboratório 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden border border-gray-200">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-code text-6xl text-purple-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">
+                            <a href="https://www.linkedin.com/posts/bruno-luiz-oliveira-terraform-laboratorio" target="_blank" class="text-blue-600 hover:text-blue-800">
+                                Laboratório Terraform
+                            </a>
+                        </h3>
+                        <p class="text-gray-600 mb-4">
+                            Provisionamento de infraestrutura como código com Terraform.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Experiência Profissional</h2>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- Timeline Item 1 -->
+                <div class="relative timeline-item pl-16 pb-12">
+                    <div class="absolute left-0 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Monitor do curso Formação AWS</h3>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">2025 - Presente</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-blue-600 mb-3">Henrylle Maia</h4>
+                        <p class="text-gray-600 mb-4">
+                            Estou atuando como monitor no curso Formação AWS do Henrylle Maia, auxiliando alunos com dúvidas técnicas e práticas. Presto suporte em computação em nuvem e serviços da AWS, com acompanhamento remoto. Colaborando para o aprendizado e desenvolvimento dos participantes.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item 2 -->
+                <div class="relative timeline-item pl-16 pb-12">
+                    <div class="absolute left-0 top-0 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-bold text-gray-800">Analista de Infraestrutura</h3>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">2015 - 2025</span>
+                        </div>
+                        <h4 class="text-lg font-semibold text-blue-600 mb-3">Prefeitura Municipal de Serra Talhada PE</h4>
+                        <p class="text-gray-600 mb-4">
+                            Atualmente, atuo como Analista de Suporte na Prefeitura de Serra Talhada, oferecendo assistência às secretarias municipais. Minhas responsabilidades incluem suporte aos usuários, gestão da infraestrutura de rede e manutenção dos sistemas essenciais. Busco constantemente ferramentas de automação para otimizar minhas atividades, com o objetivo de aumentar a produtividade, reduzir custos e melhorar a qualidade dos serviços prestados. Estou comprometido em aprimorar minhas habilidades e explorar novas tecnologias para modernizar e tornar mais eficientes os processos de suporte na administração pública.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Certificações</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Cert 1 -->
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 flex items-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fab fa-aws text-3xl text-orange-500"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-800">AWS Certified Cloud Practitioner</h3>
+                        <p class="text-sm text-gray-600">Professional</p>
+                    </div>
+                </div>
+                
+                <!-- Cert 2 -->
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 flex items-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                        <img src="src/oracle-cloud.png" alt="Oracle Cloud" class="w-12 h-12 rounded-full">
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-gray-800">Certified Oracle Cloud Infrastructure</h3>
+                        <p class="text-sm text-gray-600">Professional</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Entre em Contato</h2>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-6">Vamos conversar sobre seu projeto</h3>
+                    <p class="mb-8 text-blue-100">
+                        Estou disponível para oportunidades freelance, consultorias e projetos desafiadores. 
+                        Preencha o formulário ou entre em contato diretamente pelos canais abaixo.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-700 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p class="text-blue-200">brunooliverdevops@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-700 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Telefone</h4>
+                                <p class="text-blue-200">+55 (87) 999667-8383</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-700 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Localização</h4>
+                                <p class="text-blue-200">Serra Talhada PE, Brasil</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex space-x-4">
+                        <a href="www.linkedin.com/in/bruno-luiz-oliveira-
+
+                        " class="bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/brunoserraoliveira" class="bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://medium.com/@brunooliveirasilva" class="bg-blue-700 w-10 h-10 rounded-full flex items-center justify-center hover:bg-blue-600 transition">
+                            <i class="fab fa-medium"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <form class="bg-white bg-opacity-10 backdrop-blur-sm p-8 rounded-lg">
+                        <div class="mb-6">
+                            <label for="name" class="block mb-2 font-medium">Nome Completo</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Seu nome">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="seu@email.com">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="subject" class="block mb-2 font-medium">Assunto</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Sobre o que deseja conversar?">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 font-medium">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Sua mensagem..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-white text-blue-800 py-3 px-6 rounded-lg font-semibold hover:bg-blue-100 transition">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-xl font-bold mb-4 md:mb-0">
+                    <span class="text-blue-300">Cloud</span>Portfolio
+                </div>
+                <div class="text-sm text-blue-200">
+                    © 2025 Bruno Oliveira. Todos os direitos reservados.
+                </div>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-blue-300 transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-300 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="hover:text-blue-300 transition">
+                        <i class="fab fa-medium"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+    </script>
+</body>
+</html>
