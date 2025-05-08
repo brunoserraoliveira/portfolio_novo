@@ -2,7 +2,7 @@
 
 # Script to upload the portfolio to S3
 
-BUCKET_NAME="www.bruno-oliveira-portfolio.com.br"
+BUCKET_NAME="bruno-oliveira-portfolio.com.br"
 
 BUCKET_PATH="s3://$BUCKET_NAME"
 
